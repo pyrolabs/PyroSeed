@@ -27,8 +27,12 @@ angular.module('pyroApp', ['ionic', 'pyroApp.controllers'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
+    .state('sidemenu', {
+      abstract:true,
+      templateUrl:'templates/sidemenu.html'
+    })
     .state('home', {
+      parent:'sidemenu',
       url: '/home',
       controller:'HomeCtrl',
       templateUrl: 'components/home/home-index.html',
@@ -41,7 +45,7 @@ angular.module('pyroApp', ['ionic', 'pyroApp.controllers'])
     .state('signup', {
       url: '/signup',
       controller:'SignupCtrl',
-      templateUrl: 'components/session/account/account-signup.html'
+      templateUrl: 'components/session/signup/signup-index.html'
     })
     .state('account', {
       url: '/account',
@@ -50,5 +54,5 @@ angular.module('pyroApp', ['ionic', 'pyroApp.controllers'])
     })
     ;
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/login');
 });

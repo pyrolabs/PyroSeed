@@ -259,21 +259,25 @@
    }
   
   function emailSignup(argSignupData, argThis, successCb, errorCb) {
-    argThis.mainRef.createUser(argSignupData, function(error) {
-      if (error === null) {
-        console.log("User created successfully");
-        // Login with new account and create profile
-          argThis.login(argSignupData, function(authData){
-            createUserProfile(authData, argThis.mainRef, function(userAccount){
-              var newUser = new User(authData);
-              successCb(newUser);
+    if(!argSignupData.hasOwnProperty('email') || !argSignupData.hasOwnProperty('password')){
+      errorCb({message:'The specified email/password combination is incorrect'});
+    } else {
+      argThis.mainRef.createUser(argSignupData, function(error) {
+        if (error === null) {
+          console.log("User created successfully");
+          // Login with new account and create profile
+            argThis.login(argSignupData, function(authData){
+              createUserProfile(authData, argThis.mainRef, function(userAccount){
+                var newUser = new User(authData);
+                successCb(newUser);
+              });
             });
-          });
-      } else {
-        console.error("Error creating user:", error.message);
-        errorCb(error);
-      }
-    });
+        } else {
+          console.error("Error creating user:", error.message);
+          errorCb(error);
+        }
+      });
+    }
   }
   function authWithPassword(argLoginData, argRef, successCb, errorCb) {
     console.log('authWithPassword',argLoginData, argRef, successCb, errorCb);
