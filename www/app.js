@@ -3,8 +3,8 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('pyroApp', ['ionic'])
-
+angular.module('pyroApp', ['ionic', 'pyroApp.controllers'])
+.constant('FBURL', 'https://pyro.firebaseio.com/')
 .run(function($ionicPlatform) {
   // Use Ionic to setup device defaults
   $ionicPlatform.ready(function() {
@@ -30,18 +30,22 @@ angular.module('pyroApp', ['ionic'])
     
     .state('home', {
       url: '/home',
-      templateUrl: 'components/home/home-index.html'
+      controller:'HomeCtrl',
+      templateUrl: 'components/home/home-index.html',
     })
     .state('login', {
       url: '/login',
+      controller:'LoginCtrl',
       templateUrl: 'components/session/login/login-index.html'
     })
     .state('signup', {
       url: '/signup',
+      controller:'SignupCtrl',
       templateUrl: 'components/session/account/account-signup.html'
     })
     .state('account', {
       url: '/account',
+      controller:'AccountCtrl',
       templateUrl: 'components/session/account/account-index.html'
     })
     ;
