@@ -1,6 +1,7 @@
-angular.module('pyro.service', [])
-.factory('pyroService', [ 'FBURL','pyroMaker',  function(FBURL, pyroMaker) {
-	return pyroMaker(FBURL);
+angular.module('pyro.service', ['pyro.config'])
+.factory('pyroService', [ 'config','pyroMaker',  function(config, pyroMaker) {
+	console.log('config', config);
+	return pyroMaker(config.FBURL);
 }])
 .factory('pyroMaker', ['$q', function($q){
 	return function (argPyroUrl){
