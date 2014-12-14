@@ -1,4 +1,4 @@
-* {
+*:not(i){
   font-family: 'Lato', sans-serif !important;
 }
 
@@ -26,6 +26,13 @@ a {
   font-size:0.8em;
 }
 
+.text-theme {
+  color: #FF5722;
+}
+
+.text-theme.theme-dark {
+  color: #E64A19;
+}
 button {
   font-weight: 700 !important;
 }

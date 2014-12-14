@@ -5,7 +5,7 @@
         <div class="spacer" style="height: 40px;"></div>
       <p class="text-center">Crate your Pyro Account:</p>
       <div class="spacer" style="height: 20px;"></div>
-        <ion-item ng-show="err.message"><h4 style="color:red;">{{err.message}}</h4></ion-item>
+        <p ng-show="err.message" ><h5 class="text-center"style="color:red;font-weight:400;">{{err.message}}</h5></p>
         <label class="item item-input">
           <input type="text" placeholder="Email" ng-model="signupData.email">
         </label>

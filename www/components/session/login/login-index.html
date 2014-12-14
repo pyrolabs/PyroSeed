@@ -5,9 +5,8 @@
       <div class="spacer" style="height: 40px;"></div>
       <p class="text-center">Sign in to your Pyro Account:</p>
       <div class="spacer" style="height: 20px;"></div>
-        <label class="item" ng-show="err">
-          <span>{{err.message}}</span>
-        </label>
+        <p ng-show="err.message" ><h5 class="text-center" style="color:red;font-weight:400;">{{err.message}}</h5></p>
+
         <label class="item item-input">
           <input type="text" placeholder="Email" ng-model="loginData.email">
         </label>
