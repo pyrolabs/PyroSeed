@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('pyroApp', ['ionic', 'pyroApp.controllers'])
-.constant('FBURL', 'ZZ')
+.constant('FBURL', 'https://pyro.firebaseio.com')
 .run(function($ionicPlatform) {
   // Use Ionic to setup device defaults
   $ionicPlatform.ready(function() {
@@ -37,6 +37,11 @@ angular.module('pyroApp', ['ionic', 'pyroApp.controllers'])
       controller:'HomeCtrl',
       templateUrl: 'components/home/home-index.html',
     })
+    .state('landing', {
+      url: '/landing',
+      controller:'LandingCtrl',
+      templateUrl: 'components/landing/landing-index.html'
+    })
     .state('login', {
       url: '/login',
       controller:'LoginCtrl',
@@ -54,5 +59,5 @@ angular.module('pyroApp', ['ionic', 'pyroApp.controllers'])
     })
     ;
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/landing');
 });
