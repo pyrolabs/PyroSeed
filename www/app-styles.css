@@ -2,15 +2,20 @@
   font-family: 'Lato', sans-serif !important;
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+body {
+  color: white;
+}
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: white;
 }
 
 ion-content h1 {
-  font-size: 6em;
+  font-size: 4.5em;
+  font-weight: 400;
 }
-ion-content h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-weight: 100;
+ion-content h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 300;
 }
 
 a {

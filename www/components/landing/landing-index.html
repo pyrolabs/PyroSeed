@@ -1,26 +1,82 @@
-<ion-view title="PyroSeed" hide-nav-bar="true">
-  <ion-content scroll="false">
+<style>
+  ion-view {
+    background-color: #718DA5 !important;
+  }
+  .item.item-input {
+    margin: auto 3em;
+  }
+  #signupBox {
+    max-width:30em;
+    margin: 5em auto;
+    background-color:rgba(0,0,0,0.5);
+  }
+</style>
+<ion-view title="Our App" hide-nav-bar="true">
+  <ion-content scroll="true">
 
-  <div style="text-align:center;">
-    <h1>pyro</h1>
-    <h3>starter app</h3>
-    <div class="spacer" style="height: 10px;"></div>
-      <i class="fa fa-fire fa-5x" style="color:#EEEEEE;"></i>
-    <div class="spacer" style="height: 30px;"></div>
+  <div class="row responsive-lg">
+    <div class="col col-25">
     </div>
-  <div class="list">
-    <label class="item item-input">
-      <input type="text" placeholder="Email">
-    </label>
-    <label class="item item-input">
-      <input type="text" placeholder="Password">
-    </label>
-    <button class="item button button-block button-theme">Sign In</button>
-    <p class="item button-block button-clear text-center">Don't have an account? <a ui-sref="signup">Sign up.</a></p>
+    <div class="col col-50 text-center">
+      <div class="row">
+        <div class="col">
+          <i class="fa fa-fire fa-5x" style="color:#EEEEEE;"></i>
+        </div>
+      </div>
+      <div class="row">
+          <h1>empowering your users everywhere</h1>
+      </div>
+      <div class="row">
+        <h3>Lorem ipsum dolor sit amet. This is where you can describe what your app does. This should make our visitors want to sign up to learn more in the future.</h3>
+      </div>
+    </div>
+    <div class="col col-25">
+    </div>
   </div>
 
-  <div class="bar bar-footer bar-light">
-    <p class="title">&copy; 2014 Prescott Prue &amp; Sinan Bolel</p>
+  <div class="row responsive-lg">
+    <div class="col col-25">
+    </div>
+    <div class="col col-50">
+      <div id="signupBox" class="list" style="">
+        <div class="row">
+          <div class="col text-center">
+            <h2>Stay up to date with our app</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <p>We will only use your information to send you updates on our product.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <label class="item item-input">
+              <input type="text" placeholder="Name">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <label class="item item-input" >
+              <input type="text" placeholder="Email">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <p class="button button-positive"><a ui-sref="signup" class="light">Submit</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-25">
+    </div>
+  </div>
+
+
+  <div class="bar bar-footer bar-clear">
+    <p class="title">Our Company co. &copy; 2014. All Rights Reserved.</p>
   </div>
   
   </ion-content>
